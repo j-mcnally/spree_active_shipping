@@ -23,6 +23,10 @@ module SpreeActiveShippingExtension
     config.autoload_paths += %W(#{config.root}/lib)
     config.to_prepare &method(:activate).to_proc
 
+    initializer "spree_active_shipping.ignore_decorators" do
+      Rails.autoloaders.main.ignore(File.join(File.dirname(__FILE__), "../../app/**/*_decorator*.rb"))
+    end
+
     initializer "spree_active_shipping.register.calculators", after: "spree.register.calculators" do |app|
       if app.config.spree.calculators.shipping_methods
         classes = Dir.chdir File.join(File.dirname(__FILE__), "../../app/models") do
