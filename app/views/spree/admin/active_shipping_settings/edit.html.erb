@@ -9,19 +9,6 @@
     <fieldset class="general no-border-top">
       <div class="row">
         <div class="col-md-6">
-          <fieldset class="security no-border-bottom">
-            <legend align="center"><%= Spree.t(:ups_settings)%></legend>
-            <% @preferences_UPS.each do |key|
-                type = @config.preference_type(key) %>
-                <div class="field">
-                  <%= label_tag(key, Spree.t(key) + ': ') + tag(:br) if type != :boolean %>
-                  <%= preference_field_tag(key, @config[key], type: type) %>
-                  <%= label_tag(key, Spree.t(key)) + tag(:br) if type == :boolean %>
-                </div>
-            <% end %>
-          </fieldset>
-        </div>
-        <div class="col-md-6">
           <fieldset class="currency no-border-bottom">
             <legend align="center"><%= Spree.t(:fedex_settings)%></legend>
             <% @preferences_FedEx.each do |key|
