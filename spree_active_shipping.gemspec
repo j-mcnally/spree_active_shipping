@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency 'spree_core', '>= 4.0'
-  s.add_dependency 'active_shipping', '~> 1.4'
+  s.add_dependency 'active_shipping'
   s.add_dependency 'spree_extension'
 
   s.add_development_dependency 'pry'
@@ -31,6 +31,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'rspec-activemodel-mocks'
   s.add_development_dependency 'pg', '~> 0.18'
-  s.add_development_dependency 'mysql2', '~> 0.3.18'
   s.add_development_dependency 'appraisal'
 end
